@@ -2,6 +2,7 @@ import Navbar from "./Components/Navbar";
 import Hero from "./Components/Hero";
 import Popular from "./Components/PopularService";
 import TopWorkers from "./Components/TopWorkers";
+import Footer from "./Components/Footer";
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <Popular/>
       <TopWorkers/>
+      <Footer/>
     </div>
   );
 }
