@@ -1,6 +1,6 @@
 function Popular() {
     return (
-        <div className="bg-gray-50 pb-4">
+        <div className="bg-gray-50 ">
             <h1 className="font-bold text-3xl text-center ">Popular Services</h1>
             <div className="flex justify-center gap-10 mt-8 flex-wrap">
                 <div className="shadow-sm  bg-white flex flex-col gap-2 items-center justify-center rounded-2xl py-4 px-10">

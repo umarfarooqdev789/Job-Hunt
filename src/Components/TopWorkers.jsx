@@ -47,7 +47,7 @@ function TopWorkers(params) {
         }
     ];
     return (
-        <div className="bg-gray-50 mt-7 mb-2.5">
+        <div className="bg-gray-50 pt-15 pb-2.5">
             <h1 className="font-bold text-3xl text-center">Top Rated Workers</h1>
             <div className="flex gap-8 justify-center mt-10 flex-wrap p-5">
                 {workers.map((worker)=>(
