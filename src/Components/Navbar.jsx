@@ -13,9 +13,8 @@ function Navbar() {
       </div>
       <ul className="flex gap-6 max-sm:hidden font-normal text-[16px]">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Categories</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#">Jobs</a></li>
+        <li><a href="#">Saved Jobs</a></li>
         <li><a href="#">Login</a></li>
       </ul>
       <div className='text-2xl sm:hidden transition delay-150 duration-300 ease-in-out'>
@@ -34,15 +33,11 @@ function Navbar() {
   </li>
 
   <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-    <a href="#" className="block w-full h-full">Categories</a>
+    <a href="#" className="block w-full h-full">Jobs</a>
   </li>
 
   <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-    <a href="#" className="block w-full h-full">About</a>
-  </li>
-
-  <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-    <a href="#" className="block w-full h-full">Contact</a>
+    <a href="#" className="block w-full h-full">Saved Jobs</a>
   </li>
 
   <li className="block px-3 py-2 bg-white rounded-md shadow-md cursor-pointer">
