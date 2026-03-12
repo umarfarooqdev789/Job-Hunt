@@ -186,23 +186,27 @@ const workers = [
 function Allworkers() {
   const [saved, setSaved] = useState([]);
   const [filter, setFilter] = useState("")
-  const filterProducts = useMemo(() => {
-    if (!filter) {
-      return workers
-    } else {
-      const searchTerm = filter.toLowerCase();
-      return workers.filter((worker) => {
-        return worker.skill.toLowerCase().includes(searchTerm)
-      });
-    }
-  }, [filter]);
+const filterProducts = useMemo(() => {
+  if (!filter) return workers;
+
+  const searchTerm = filter.toLowerCase();
+
+  return workers.filter((worker) => {
+    return (
+      worker.name.toLowerCase().includes(searchTerm) ||
+      worker.skill.toLowerCase().includes(searchTerm) ||
+      worker.city.toLowerCase().includes(searchTerm) ||
+      worker.experience.toLowerCase().includes(searchTerm)
+    );
+  });
+}, [filter]);
   return (
     <>
       <section>
         <div className="px-10 py-10 flex flex-col gap-3.5 sm:px-20">
           <h1 className="font-bold text-5xl">Browse Jobs</h1>
           <h2 className="text-[14px]">Find the perfect role from available positions</h2>
-          <input type="text" placeholder="🔍 Search by title, company, or skill…" className="w-full max-w-full px-5 py-3 outline-none border border-gray-300 rounded-lg focus:outline-none "
+          <input type="text" placeholder="🔍 Search by name, skill or experience..." className="w-full max-w-full px-5 py-3 outline-none border border-gray-300 rounded-lg focus:outline-none "
             value={filter}
             onChange={(e) => {
               setFilter(e.target.value)

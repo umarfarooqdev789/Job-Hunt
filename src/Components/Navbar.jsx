@@ -6,7 +6,7 @@ function Navbar() {
 
   return (
     <>
-    <nav className="bg-blue-400 text-white px-6 py-4 flex justify-between items-center">
+    <nav className="bg-blue-400 text-white px-6 py-4 flex justify-between items-center sticky top-0">
       <div className='flex justify-center items-center'>
         <img src={Logo} alt="" className='w-28' />
         <div className="text-2xl font-bold">Job-Hunt</div>

@@ -7,6 +7,8 @@ import JobsListing from "./Components/Jobslisting";
 import AllWorkers from "./Components/Allworkers";
 import Allworkers from "./Components/Allworkers";
 import JobDetails from "./Components/JobDetail";
+import SavedJobs from "./Components/SavedJobs"
+import Login from "./Components/Login";
 
 function App() {
   return (
@@ -14,8 +16,10 @@ function App() {
       <Navbar />
       {/* <Hero />
       <Popular/> */}
-      <Allworkers/>
+      {/* <Allworkers/> */}
       {/* <JobDetails/> */}
+      {/* <SavedJobs/> */}
+      <Login/>
       <Footer/> 
     </div>
   );
