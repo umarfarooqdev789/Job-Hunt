@@ -1,11 +1,12 @@
-import { useState } from "react"
-import Allworkers from "./Allworkers"
+import { useContext } from "react";
+import { SearchContext } from "../SearchContext";
+import Allworkers from "./Allworkers";
+
 function JobsListing() {
-    return (
-        <>
-            <Allworkers/>
-        </>
-    )
+  const { input } = useContext(SearchContext);
+  const { saved } = useContext(SearchContext);
+
+  return <Allworkers input={input} saved={saved}/>;
 }
 
-export default JobsListing
+export default JobsListing;

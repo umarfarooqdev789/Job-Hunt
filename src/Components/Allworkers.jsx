@@ -1,4 +1,4 @@
-import { useMemo, useState } from "react";
+
 
 const workers = [
   {
@@ -183,78 +183,95 @@ const workers = [
   }
 ];
 
+import { useMemo, useState, useEffect, useContext } from "react";
+import { SearchContext } from "../SearchContext";
+import {Link} from "react-router-dom"
+
 function Allworkers() {
-  const [saved, setSaved] = useState([]);
-  const [filter, setFilter] = useState("")
-const filterProducts = useMemo(() => {
-  if (!filter) return workers;
+  const { input, saved, toggleSave } = useContext(SearchContext);
+  const [filter, setFilter] = useState("");
 
-  const searchTerm = filter.toLowerCase();
+  useEffect(() => {
+    if (input) {
+      setFilter(input);
+    }
+  }, [input]);
 
-  return workers.filter((worker) => {
-    return (
-      worker.name.toLowerCase().includes(searchTerm) ||
-      worker.skill.toLowerCase().includes(searchTerm) ||
-      worker.city.toLowerCase().includes(searchTerm) ||
-      worker.experience.toLowerCase().includes(searchTerm)
-    );
-  });
-}, [filter]);
+  const filterProducts = useMemo(() => {
+    if (!filter) return workers;
+
+    const searchTerm = filter.toLowerCase();
+
+    return workers.filter((worker) => {
+      return (
+        worker.name.toLowerCase().includes(searchTerm) ||
+        worker.skill.toLowerCase().includes(searchTerm) ||
+        worker.city.toLowerCase().includes(searchTerm) ||
+        worker.experience.toLowerCase().includes(searchTerm)
+      );
+    });
+  }, [filter]);
+
   return (
     <>
       <section>
         <div className="px-10 py-10 flex flex-col gap-3.5 sm:px-20">
           <h1 className="font-bold text-5xl">Browse Jobs</h1>
-          <h2 className="text-[14px]">Find the perfect role from available positions</h2>
-          <input type="text" placeholder="🔍 Search by name, skill or experience..." className="w-full max-w-full px-5 py-3 outline-none border border-gray-300 rounded-lg focus:outline-none "
+          <h2 className="text-[14px]">
+            Find the perfect role from available positions
+          </h2>
+
+          <input
+            type="text"
+            placeholder="🔍 Search by name, skill or experience..."
+            className="w-full max-w-full px-5 py-3 outline-none border border-gray-300 rounded-lg"
             value={filter}
-            onChange={(e) => {
-              setFilter(e.target.value)
-            }}
+            onChange={(e) => setFilter(e.target.value)}
           />
         </div>
       </section>
+
       <div className="bg-gray-50 pb-2.5">
         <div className="flex gap-8 justify-center flex-wrap p-5">
-          {filterProducts.map((worker) => (
-            <div
-              className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54"
-              key={worker.id}
-            >
-              <img
-                src={worker.img}
-                alt={worker.name}
-                className="rounded w-full h-40 object-cover"
-              />
+          {filterProducts.map((worker) => {
+            const isSaved = saved.some((item) => item.id === worker.id);
 
-              <ul className="py-3.5 px-5 space-y-1.5">
-                <li className="font-bold">{worker.name}</li>
-                <li className="font-medium text-[14px]">{worker.skill}</li>
-                <li className="text-gray-500 font-light">{worker.city}</li>
-                <li>⭐{worker.rating}</li>
-                <li className="text-gray-600 text-[12px]">{worker.experience}</li>
-              </ul>
+            return (
+              <div
+                className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54"
+                key={worker.id}
+              >
+                <img
+                  src={worker.img}
+                  alt={worker.name}
+                  className="rounded w-full h-40 object-cover"
+                />
 
-              <div className="flex px-2 justify-around py-5">
-                <button
-                  onClick={() => {
-                    if (saved.includes(worker.id)) {
-                      setSaved(saved.filter((arr) => arr !== worker.id));
-                    } else {
-                      setSaved([...saved, worker.id]);
-                    }
-                  }}
-                  className="text-2xl"
-                >
-                  {saved.includes(worker.id) ? "♥" : "♡"}
-                </button>
+                <ul className="py-3.5 px-5 space-y-1.5">
+                  <li className="font-bold">{worker.name}</li>
+                  <li className="font-medium text-[14px]">{worker.skill}</li>
+                  <li className="text-gray-500 font-light">{worker.city}</li>
+                  <li>⭐{worker.rating}</li>
+                  <li className="text-gray-600 text-[12px]">{worker.experience}</li>
+                </ul>
 
-                <button className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
-                  View & Apply →
-                </button>
+                <div className="flex px-2 justify-around py-5">
+                  <button
+                    onClick={() => {
+                      console.log(worker)
+                      toggleSave(worker)}}
+                    className="text-2xl cursor-pointer"
+                  >
+                    {isSaved ? "♥" : "♡"}
+                  </button>
+
+                  <Link to={`/card/${worker.id}`} className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
+                    View & Apply →
+                  </Link>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </>
