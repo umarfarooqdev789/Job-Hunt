@@ -24,8 +24,6 @@ function SavedJobs() {
       </section>
     );
   }
-
-  // 🔥 Show Saved Cards
   return (
     <section className="bg-gray-50 py-10">
       <h1 className="text-center text-3xl font-bold mb-10">Your Saved Jobs</h1>
@@ -58,9 +56,9 @@ function SavedJobs() {
                 ♥
               </button>
 
-              <button className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <Link to="/jobs" className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
                 View & Apply →
-              </button>
+              </Link>
             </div>
           </div>
         ))}
