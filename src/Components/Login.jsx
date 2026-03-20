@@ -1,7 +1,6 @@
 import { useState } from "react";
 
-
-export default function Auth() {
+ function Login() {
     const [showLogin, setShowLogin] = useState(false);
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
@@ -194,3 +193,6 @@ export default function Auth() {
         </div>
     );
 }
+
+
+export default Login

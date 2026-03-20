@@ -7,6 +7,8 @@ import JobsListing from "./Components/Jobslisting"
 import SavedJobs from "./Components/SavedJobs"
 import JobDetails from "./Components/JobDetail"
 import Login from "./Components/Login"
+import AboutUs from "./Components/About"
+import Contact from "./Components/Contact"
 import {RouterProvider , createBrowserRouter} from "react-router-dom"
 import { SearchProvider } from "./SearchContext";
  const router =createBrowserRouter([
@@ -17,6 +19,8 @@ import { SearchProvider } from "./SearchContext";
       {path:"saved",element:<SavedJobs/>},
       {path:"card/:id",element:<JobDetails/>},
       {path:"Login",element:<Login/>},
+      {path:"about",element:<AboutUs/>},
+      {path:"contact",element:<Contact/>},
 
     ]
   }
