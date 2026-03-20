@@ -189,7 +189,7 @@ import { useParams } from "react-router-dom";
 function JobDetails() {
   const { id } = useParams();
 
-  const job = workers.find((c) => c.id === parseInt(id));
+  const job = workers.find((c) => c.id ==id);
     return (
         <>
             <section className=" bg-gray-50 py-20 flex justify-center">
