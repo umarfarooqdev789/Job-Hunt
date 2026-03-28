@@ -3,200 +3,226 @@
 const workers = [
   {
     id: 1,
-    name: "Ahmad Ali",
-    skill: "Electrician",
-    city: "Lahore",
-    rating: 4.9,
-    experience: "5 Years Experience",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCE0ikShlBGif1RagKPuWVIJqFMFjls_pYMA&s",
-    tags: ["Wiring", "Solar Panels", "AC Repair"],
-    description: "Ahmad Ali is a highly skilled electrician with over 5 years of hands-on experience in residential and commercial electrical work. He specializes in wiring, solar panel installation, and AC repair with a strong focus on safety and quality.",
+    title: "Frontend Developer",
+    company: "TechCorp",
+    location: "Lahore, Pakistan",
+    type: "Full-time",
+    salary: "Rs 80,000 – Rs 120,000",
+    logo: "TC",
+    color: "#3b82f6",
+    tags: ["React", "Tailwind", "JavaScript"],
+    description: "TechCorp is looking for a skilled Frontend Developer to build modern, responsive web applications using React and Tailwind CSS.",
     requirements: [
-      "Available for both home and office visits",
-      "Brings own tools and equipment",
-      "Experienced in 3-phase wiring",
-      "Solar panel installation certified",
-      "24/7 emergency service available"
-    ]
+      "2+ years of frontend development experience",
+      "Strong knowledge of React and JavaScript",
+      "Experience with Tailwind CSS",
+      "Good understanding of REST APIs",
+      "Eye for clean UI/UX design",
+    ],
+    posted: "1 day ago",
+    featured: true,
   },
   {
     id: 2,
-    name: "Sara Khan",
-    skill: "Graphic Designer",
-    city: "Karachi",
-    rating: 4.8,
-    experience: "Logo & Branding Expert",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS1ShOJm1-4cQ1bmsFePPNuHsayVe15_Ko67w&s",
-    tags: ["Logo Design", "Branding", "Adobe Illustrator"],
-    description: "Sara Khan is a creative graphic designer specializing in logo design and brand identity. With a sharp eye for aesthetics and strong command of Adobe tools, she delivers visually stunning results that help businesses stand out.",
+    title: "Graphic Designer",
+    company: "CreativeHub",
+    location: "Karachi, Pakistan",
+    type: "Part-time",
+    salary: "Rs 50,000 – Rs 80,000",
+    logo: "CH",
+    color: "#f59e0b",
+    tags: ["Figma", "Photoshop", "Illustrator"],
+    description: "CreativeHub needs a creative Graphic Designer to design stunning visuals for social media, branding, and marketing campaigns.",
     requirements: [
-      "Delivers work within 3–5 business days",
-      "Provides unlimited revisions on logos",
-      "Expert in Adobe Illustrator and Photoshop",
-      "Creates full brand kits including fonts and colors",
-      "Available for remote work across Pakistan"
-    ]
+      "2+ years of graphic design experience",
+      "Proficiency in Figma and Adobe Suite",
+      "Strong portfolio of design work",
+      "Ability to meet deadlines",
+      "Good communication skills",
+    ],
+    posted: "2 days ago",
+    featured: false,
   },
   {
     id: 3,
-    name: "Usman Tariq",
-    skill: "Plumber",
-    city: "Islamabad",
-    rating: 4.7,
-    experience: "Fast & Reliable",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSl8ANeHOTri8czlbME7Jab27gYERgA4cZ9PQ&s",
-    tags: ["Pipe Fitting", "Leak Repair", "Bathroom Fitting"],
-    description: "Usman Tariq is a reliable and fast plumber based in Islamabad. He handles everything from minor leak repairs to complete bathroom fittings. Known for his punctuality and clean work, Usman is the go-to plumber in the twin cities.",
+    title: "Digital Marketer",
+    company: "GrowthX",
+    location: "Islamabad, Pakistan",
+    type: "Full-time",
+    salary: "Rs 70,000 – Rs 100,000",
+    logo: "GX",
+    color: "#8b5cf6",
+    tags: ["SEO", "Facebook Ads", "Analytics"],
+    description: "GrowthX is hiring a Digital Marketer to drive online growth through SEO, paid ads, and content strategies.",
     requirements: [
-      "Same-day service available",
-      "Specializes in bathroom and kitchen fittings",
-      "Uses high-quality pipes and fittings",
-      "Experienced with both underground and overhead systems",
-      "Free inspection before starting work"
-    ]
+      "3+ years of digital marketing experience",
+      "Experience with Facebook & Google Ads",
+      "Strong knowledge of SEO",
+      "Data-driven mindset",
+      "Experience with Google Analytics",
+    ],
+    posted: "3 days ago",
+    featured: true,
   },
   {
     id: 4,
-    name: "Iqra Javed",
-    skill: "Digital Marketer",
-    city: "Multan",
-    rating: 4.8,
-    experience: "Facebook & Instagram Ads",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjUS0Du3g1dTwYVjRTwA6QfSgV_v1ghO9xVA&s",
-    tags: ["Facebook Ads", "Instagram", "SEO"],
-    description: "Iqra Javed is a results-driven digital marketer with deep expertise in Facebook and Instagram advertising. She helps businesses grow their online presence, generate leads, and increase sales through targeted ad campaigns and SEO strategies.",
+    title: "Backend Developer",
+    company: "CodeNest",
+    location: "Lahore, Pakistan",
+    type: "Full-time",
+    salary: "Rs 100,000 – Rs 150,000",
+    logo: "CN",
+    color: "#10b981",
+    tags: ["Node.js", "MongoDB", "Express"],
+    description: "CodeNest is looking for a Backend Developer to build scalable APIs and manage databases for our growing SaaS platform.",
     requirements: [
-      "Manages ad budgets from Rs. 5,000 to Rs. 500,000+",
-      "Provides weekly performance reports",
-      "Expert in Meta Business Suite",
-      "Experienced in Google Ads and SEO",
-      "Offers free 30-minute consultation"
-    ]
+      "3+ years of backend development",
+      "Strong knowledge of Node.js and MongoDB",
+      "Experience building REST APIs",
+      "Understanding of authentication (JWT/OAuth)",
+      "Problem-solving mindset",
+    ],
+    posted: "1 day ago",
+    featured: true,
   },
   {
     id: 5,
-    name: "Ali Raza",
-    skill: "Carpenter",
-    city: "Faisalabad",
-    rating: 4.6,
-    experience: "Custom Furniture",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsGz9-zc4aJIqb7P20R7sjqamKs-_8BvC_A&s",
-    tags: ["Custom Furniture", "Wood Work", "Cabinet Making"],
-    description: "Ali Raza is a skilled carpenter from Faisalabad with years of experience in crafting custom furniture and woodwork. From beds and wardrobes to kitchen cabinets, he delivers high-quality craftsmanship tailored to your exact needs.",
+    title: "UI/UX Designer",
+    company: "PixelCraft",
+    location: "Karachi, Pakistan",
+    type: "Remote",
+    salary: "Rs 60,000 – Rs 90,000",
+    logo: "PC",
+    color: "#ec4899",
+    tags: ["Figma", "Wireframing", "Prototyping"],
+    description: "PixelCraft needs a UI/UX Designer to create beautiful, user-friendly interfaces for mobile and web applications.",
     requirements: [
-      "Specializes in custom-made furniture",
-      "Uses premium quality wood and materials",
-      "Provides home visit for measurements",
-      "Delivers and installs furniture at your location",
-      "Offers warranty on all completed work"
-    ]
+      "2+ years of UI/UX design experience",
+      "Strong Figma skills",
+      "Portfolio with real projects",
+      "Understanding of user research",
+      "Ability to create design systems",
+    ],
+    posted: "5 days ago",
+    featured: false,
   },
   {
     id: 6,
-    name: "Bilal Hassan",
-    skill: "Senior Frontend Developer",
-    city: "Lahore",
-    rating: 4.9,
-    experience: "React & TypeScript Expert",
-    img: "https://snapperit.com/wp-content/uploads/2025/09/image-5.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    description: "Bilal Hassan is a senior frontend developer with strong expertise in React and TypeScript. He builds fast, scalable, and beautiful web applications with clean code and modern best practices. Available for freelance and full-time projects.",
+    title: "React Native Developer",
+    company: "AppForge",
+    location: "Faisalabad, Pakistan",
+    type: "Full-time",
+    salary: "Rs 90,000 – Rs 130,000",
+    logo: "AF",
+    color: "#06b6d4",
+    tags: ["React Native", "Firebase", "Redux"],
+    description: "AppForge is hiring a React Native Developer to build high-performance mobile apps for iOS and Android platforms.",
     requirements: [
-      "5+ years of experience in frontend development",
-      "Strong command of React, TypeScript, and Tailwind",
-      "Experience with REST APIs and state management",
-      "Delivers pixel-perfect UI from Figma designs",
-      "Available for both short and long-term projects"
-    ]
+      "2+ years of React Native experience",
+      "Knowledge of Firebase and Redux",
+      "Experience publishing apps on Play Store/App Store",
+      "Understanding of mobile UI patterns",
+      "Strong JavaScript skills",
+    ],
+    posted: "2 days ago",
+    featured: false,
   },
   {
     id: 7,
-    name: "Ayesha Noor",
-    skill: "Product Designer",
-    city: "Karachi",
-    rating: 4.8,
-    experience: "Figma & UX Research",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjjo3RRvXL1GPPchBXGdQMgs2tRL6AHi-AQ&s",
-    tags: ["Figma", "UX Research", "Prototyping"],
-    description: "Ayesha Noor is a talented product designer who specializes in creating user-centered digital experiences. She combines UX research with stunning visual design to deliver products that users love, from wireframes to high-fidelity prototypes.",
+    title: "Data Analyst",
+    company: "InsightIQ",
+    location: "Islamabad, Pakistan",
+    type: "Full-time",
+    salary: "Rs 85,000 – Rs 120,000",
+    logo: "IQ",
+    color: "#f97316",
+    tags: ["Python", "Excel", "Power BI"],
+    description: "InsightIQ is looking for a Data Analyst to analyze business data and create dashboards that drive smart decisions.",
     requirements: [
-      "Expert in Figma and Adobe XD",
-      "Conducts user research and usability testing",
-      "Creates complete design systems",
-      "Experienced with mobile and web app design",
-      "Collaborates closely with development teams"
-    ]
+      "2+ years of data analysis experience",
+      "Proficiency in Python and Excel",
+      "Experience with Power BI or Tableau",
+      "Strong analytical thinking",
+      "Knowledge of SQL databases",
+    ],
+    posted: "4 days ago",
+    featured: true,
   },
   {
     id: 8,
-    name: "Hamza Sheikh",
-    skill: "Backend Engineer",
-    city: "Islamabad",
-    rating: 4.7,
-    experience: "Node.js & PostgreSQL",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9-uFRy3rLu7BLyilJ8UFDcjagZcf2MSYlmg&s",
-    tags: ["Node.js", "PostgreSQL", "AWS"],
-    description: "Hamza Sheikh is a backend engineer with deep expertise in building robust APIs and scalable server-side systems. He works with Node.js, PostgreSQL, and AWS to deliver high-performance backend solutions for startups and enterprises alike.",
+    title: "Content Writer",
+    company: "WordFlow",
+    location: "Remote",
+    type: "Part-time",
+    salary: "Rs 40,000 – Rs 60,000",
+    logo: "WF",
+    color: "#64748b",
+    tags: ["Blog Writing", "SEO", "Copywriting"],
+    description: "WordFlow needs a talented Content Writer to create engaging blogs, website copy, and social media content.",
     requirements: [
-      "4+ years of backend development experience",
-      "Strong skills in Node.js and Express.js",
-      "Database design with PostgreSQL and MongoDB",
-      "Cloud deployment on AWS and Heroku",
-      "Experience with microservices architecture"
-    ]
+      "1+ years of content writing experience",
+      "Strong English writing skills",
+      "Basic knowledge of SEO",
+      "Ability to write in different tones",
+      "Meet deadlines consistently",
+    ],
+    posted: "1 day ago",
+    featured: false,
   },
   {
     id: 9,
-    name: "Zara Malik",
-    skill: "DevOps Engineer",
-    city: "Rawalpindi",
-    rating: 4.8,
-    experience: "Kubernetes & Docker",
-    img: "https://nrtechnologies.org/wp-content/uploads/2024/11/programming-background-collage-scaled-e1754161397912-1024x695.jpg",
-    tags: ["Kubernetes", "Docker", "Terraform"],
-    description: "Zara Malik is an experienced DevOps engineer who automates deployments, manages cloud infrastructure, and ensures system reliability. She is skilled in Kubernetes, Docker, and Terraform with a passion for building efficient CI/CD pipelines.",
+    title: "DevOps Engineer",
+    company: "CloudBase",
+    location: "Lahore, Pakistan",
+    type: "Full-time",
+    salary: "Rs 150,000 – Rs 200,000",
+    logo: "CB",
+    color: "#ef4444",
+    tags: ["Docker", "AWS", "CI/CD"],
+    description: "CloudBase is hiring a DevOps Engineer to manage cloud infrastructure, deployments, and CI/CD pipelines.",
     requirements: [
-      "3+ years of DevOps and cloud experience",
-      "Hands-on with Kubernetes and Docker",
-      "Infrastructure as Code using Terraform",
-      "CI/CD pipeline setup with GitHub Actions",
-      "24/7 monitoring and incident response"
-    ]
+      "3+ years of DevOps experience",
+      "Strong knowledge of AWS or Azure",
+      "Experience with Docker and Kubernetes",
+      "CI/CD pipeline setup experience",
+      "Linux system administration skills",
+    ],
+    posted: "6 days ago",
+    featured: true,
   },
   {
     id: 10,
-    name: "Faisal Mehmood",
-    skill: "Data Scientist",
-    city: "Faisalabad",
-    rating: 4.6,
-    experience: "Python & TensorFlow",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1t_7UrIc8dJKgHiZpO60vVamDMYgYdqCiLQ&s",
-    tags: ["Python", "TensorFlow", "SQL"],
-    description: "Faisal Mehmood is a data scientist with strong skills in Python, TensorFlow, and SQL. He builds and deploys machine learning models that turn raw data into actionable insights. He has worked on projects ranging from predictive analytics to NLP.",
+    title: "WordPress Developer",
+    company: "WebMakers",
+    location: "Multan, Pakistan",
+    type: "Freelance",
+    salary: "Rs 50,000 – Rs 80,000",
+    logo: "WM",
+    color: "#0ea5e9",
+    tags: ["WordPress", "PHP", "Elementor"],
+    description: "WebMakers needs a WordPress Developer to build and customize websites for clients across various industries.",
     requirements: [
-      "3+ years in data science and machine learning",
-      "Proficient in Python, Pandas, and NumPy",
-      "Experience with TensorFlow and Scikit-learn",
-      "Strong SQL and data wrangling skills",
-      "Delivers detailed analysis reports with visualizations"
-    ]
-  }
+      "2+ years of WordPress development",
+      "Knowledge of PHP and MySQL",
+      "Experience with Elementor or Divi",
+      "Ability to create custom themes/plugins",
+      "Client communication skills",
+    ],
+    posted: "3 days ago",
+    featured: false,
+  },
 ];
-
 import { useMemo, useState, useEffect, useContext } from "react";
 import { SearchContext } from "../SearchContext";
-import {Link} from "react-router-dom"
-
+import { Link } from "react-router-dom"
 function Allworkers() {
   const { input, saved, toggleSave } = useContext(SearchContext);
   const [filter, setFilter] = useState("");
-
   useEffect(() => {
     if (input) {
       setFilter(input);
     }
   }, [input]);
-
   const filterProducts = useMemo(() => {
     if (!filter) return workers;
 
@@ -204,14 +230,13 @@ function Allworkers() {
 
     return workers.filter((worker) => {
       return (
-        worker.name.toLowerCase().includes(searchTerm) ||
-        worker.skill.toLowerCase().includes(searchTerm) ||
-        worker.city.toLowerCase().includes(searchTerm) ||
-        worker.experience.toLowerCase().includes(searchTerm)
+        worker.title.toLowerCase().includes(searchTerm) ||
+        worker.company.toLowerCase().includes(searchTerm) ||
+        worker.location.toLowerCase().includes(searchTerm) ||
+        worker.type.toLowerCase().includes(searchTerm)
       );
     });
   }, [filter]);
-
   return (
     <>
       <section>
@@ -220,7 +245,6 @@ function Allworkers() {
           <h2 className="text-[14px]">
             Find the perfect role from available positions
           </h2>
-
           <input
             type="text"
             placeholder="🔍 Search by name, skill or experience..."
@@ -230,44 +254,36 @@ function Allworkers() {
           />
         </div>
       </section>
-
-      <div className="bg-gray-50 pb-2.5">
+      <div className="bg-gray-50">
         <div className="flex gap-8 justify-center flex-wrap p-5">
           {filterProducts.map((worker) => {
             const isSaved = saved.some((item) => item.id === worker.id);
-
             return (
               <div
-                className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54"
                 key={worker.id}
+                className="px-3 py-5 rounded-xl shadow-md bg-white overflow-hidden w-54"
               >
-                <img
-                  src={worker.img}
-                  alt={worker.name}
-                  className="rounded w-full h-40 object-cover"
-                />
-
-                <ul className="py-3.5 px-5 space-y-1.5">
-                  <li className="font-bold">{worker.name}</li>
-                  <li className="font-medium text-[14px]">{worker.skill}</li>
-                  <li className="text-gray-500 font-light">{worker.city}</li>
-                  <li>⭐{worker.rating}</li>
-                  <li className="text-gray-600 text-[12px]">{worker.experience}</li>
-                </ul>
-
-                <div className="flex px-2 justify-around py-5">
+                <div>
+                  <h2 className="font-bold text-lg">{worker.title}</h2>
+                  <p className="text-gray-500 text-sm">{worker.company}</p>
+                  <p className="text-gray-400 text-sm">📍 {worker.location}</p>
+                  <p className="text-blue-600 font-semibold mt-2">{worker.salary}</p>
+                </div>
+                <div className="flex px-2 justify-around py-5 gap-2">
                   <button
                     onClick={() => {
                       console.log(worker)
-                      toggleSave(worker)}}
+                      toggleSave(worker)
+                    }}
                     className="text-2xl cursor-pointer"
                   >
                     {isSaved ? "♥" : "♡"}
                   </button>
-
-                  <Link to={`/card/${worker.id}`} className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
-                    View & Apply →
-                  </Link>
+                  <div className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
+                    <Link to={`/jobdetail/${worker.id}`} className="block text-center">
+                      Apply Now
+                    </Link>
+                  </div>
                 </div>
               </div>
             );
@@ -277,5 +293,4 @@ function Allworkers() {
     </>
   );
 }
-
 export default Allworkers;

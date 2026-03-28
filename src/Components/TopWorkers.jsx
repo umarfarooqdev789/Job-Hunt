@@ -46,25 +46,42 @@ const workers = [
         img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPsGz9-zc4aJIqb7P20R7sjqamKs-_8BvC_A&s"
     }
 ];
-
+import { Link } from "react-router-dom"
 function TopWorkers() {
     return (
         <div className="bg-gray-50 pt-15 pb-2.5">
             <h1 className="font-bold text-3xl text-center">Top Rated Workers</h1>
             <div className="flex gap-8 justify-center mt-10 flex-wrap p-5">
-                {workers.map((worker) => (
-                    <div className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54" key={worker.id}>
-                        <img src={worker.img} alt={worker.name} className="rounded w-full h-40 object-cover" />
-                        <ul className="py-3.5 px-5 space-y-1.5">
-                            <li className="font-bold">{worker.name}</li>
-                            <li className="font-medium text-[14px]">{worker.skill}</li>
-                            <li className="text-gray-500 font-light">{worker.city}</li>
-                            <li>⭐{worker.rating}</li>
-                            <li className="text-gray-600 text-[12px]">{worker.experience}</li>
-                        </ul>
-                    </div>
-                ))
+                {workers.map((worker) => {
+                    return (
+                        <div
+                            className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54"
+                            key={worker.id}
+                        >
+                            <img
+                                src={worker.img}
+                                alt={worker.name}
+                                className="rounded w-full h-40 object-cover"
+                            />
 
+                            <ul className="py-3.5 px-5 space-y-1.5">
+                                <li className="font-bold">{worker.name}</li>
+                                <li className="font-medium text-[14px]">{worker.skill}</li>
+                                <li className="text-gray-500 font-light">{worker.city}</li>
+                                <li>⭐{worker.rating}</li>
+                                <li className="text-gray-600 text-[12px]">{worker.experience}</li>
+                            </ul>
+
+                            <div className="flex px-2 justify-around py-5">
+                                <Link to={`/card/${worker.id}`} className="text-[12px] p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+                                    View & Apply →
+                                </Link>
+                            </div>
+
+                        </div>
+
+                    );
+                })
                 }
 
             </div>

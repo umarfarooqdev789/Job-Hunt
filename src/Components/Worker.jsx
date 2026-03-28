@@ -92,103 +92,12 @@ const workers = [
       "Delivers and installs furniture at your location",
       "Offers warranty on all completed work"
     ]
-  },
-  {
-    id: 6,
-    name: "Bilal Hassan",
-    skill: "Senior Frontend Developer",
-    city: "Lahore",
-    rating: 4.9,
-    experience: "React & TypeScript Expert",
-    img: "https://snapperit.com/wp-content/uploads/2025/09/image-5.png",
-    tags: ["React", "TypeScript", "Tailwind CSS"],
-    description: "Bilal Hassan is a senior frontend developer with strong expertise in React and TypeScript. He builds fast, scalable, and beautiful web applications with clean code and modern best practices. Available for freelance and full-time projects.",
-    requirements: [
-      "5+ years of experience in frontend development",
-      "Strong command of React, TypeScript, and Tailwind",
-      "Experience with REST APIs and state management",
-      "Delivers pixel-perfect UI from Figma designs",
-      "Available for both short and long-term projects"
-    ]
-  },
-  {
-    id: 7,
-    name: "Ayesha Noor",
-    skill: "Product Designer",
-    city: "Karachi",
-    rating: 4.8,
-    experience: "Figma & UX Research",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRXjjo3RRvXL1GPPchBXGdQMgs2tRL6AHi-AQ&s",
-    tags: ["Figma", "UX Research", "Prototyping"],
-    description: "Ayesha Noor is a talented product designer who specializes in creating user-centered digital experiences. She combines UX research with stunning visual design to deliver products that users love, from wireframes to high-fidelity prototypes.",
-    requirements: [
-      "Expert in Figma and Adobe XD",
-      "Conducts user research and usability testing",
-      "Creates complete design systems",
-      "Experienced with mobile and web app design",
-      "Collaborates closely with development teams"
-    ]
-  },
-  {
-    id: 8,
-    name: "Hamza Sheikh",
-    skill: "Backend Engineer",
-    city: "Islamabad",
-    rating: 4.7,
-    experience: "Node.js & PostgreSQL",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ9-uFRy3rLu7BLyilJ8UFDcjagZcf2MSYlmg&s",
-    tags: ["Node.js", "PostgreSQL", "AWS"],
-    description: "Hamza Sheikh is a backend engineer with deep expertise in building robust APIs and scalable server-side systems. He works with Node.js, PostgreSQL, and AWS to deliver high-performance backend solutions for startups and enterprises alike.",
-    requirements: [
-      "4+ years of backend development experience",
-      "Strong skills in Node.js and Express.js",
-      "Database design with PostgreSQL and MongoDB",
-      "Cloud deployment on AWS and Heroku",
-      "Experience with microservices architecture"
-    ]
-  },
-  {
-    id: 9,
-    name: "Zara Malik",
-    skill: "DevOps Engineer",
-    city: "Rawalpindi",
-    rating: 4.8,
-    experience: "Kubernetes & Docker",
-    img: "https://nrtechnologies.org/wp-content/uploads/2024/11/programming-background-collage-scaled-e1754161397912-1024x695.jpg",
-    tags: ["Kubernetes", "Docker", "Terraform"],
-    description: "Zara Malik is an experienced DevOps engineer who automates deployments, manages cloud infrastructure, and ensures system reliability. She is skilled in Kubernetes, Docker, and Terraform with a passion for building efficient CI/CD pipelines.",
-    requirements: [
-      "3+ years of DevOps and cloud experience",
-      "Hands-on with Kubernetes and Docker",
-      "Infrastructure as Code using Terraform",
-      "CI/CD pipeline setup with GitHub Actions",
-      "24/7 monitoring and incident response"
-    ]
-  },
-  {
-    id: 10,
-    name: "Faisal Mehmood",
-    skill: "Data Scientist",
-    city: "Faisalabad",
-    rating: 4.6,
-    experience: "Python & TensorFlow",
-    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR1t_7UrIc8dJKgHiZpO60vVamDMYgYdqCiLQ&s",
-    tags: ["Python", "TensorFlow", "SQL"],
-    description: "Faisal Mehmood is a data scientist with strong skills in Python, TensorFlow, and SQL. He builds and deploys machine learning models that turn raw data into actionable insights. He has worked on projects ranging from predictive analytics to NLP.",
-    requirements: [
-      "3+ years in data science and machine learning",
-      "Proficient in Python, Pandas, and NumPy",
-      "Experience with TensorFlow and Scikit-learn",
-      "Strong SQL and data wrangling skills",
-      "Delivers detailed analysis reports with visualizations"
-    ]
   }
 ];
 import { useParams } from "react-router-dom";
 
-function JobDetails() {
+function Worker() {
   const { id } = useParams();
-
   const job = workers.find((c) => c.id ==id);
     return (
         <>
@@ -227,7 +136,5 @@ function JobDetails() {
             </section>
         </>
     )
-
-
 }
-export default JobDetails
+export default Worker

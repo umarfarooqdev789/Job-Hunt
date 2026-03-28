@@ -7,11 +7,8 @@ function Navbar() {
 
   return (
     <>
-      <nav className="bg-blue-400 text-white px-6 py-4 flex justify-between items-center sticky top-0 z-20">
-        <div className='flex justify-center items-center'>
-          <img src={Logo} alt="" className='w-28' />
-          <div className="text-2xl font-bold">Job-Hunt</div>
-        </div>
+      <nav className="bg-blue-400 text-white px-10 py-3 flex justify-between items-center sticky top-0 z-20">
+        <div className="text-2xl font-bold">Job-Hunt</div>
         <ul className="flex gap-6 max-sm:hidden font-normal text-[16px]">
           <li>
             <NavLink to="/">Home</NavLink>
