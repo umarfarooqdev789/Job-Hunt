@@ -126,7 +126,7 @@ const workers = [
         city: "Lahore",
         rating: 4.8,
         experience: "Desi & Chinese Food",
-        img: "https://randomuser.me/api/portraits/women/80.jpg"
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgp5JncNHX115QM9oZijfjS3uFpqQGTMzF7g&s"
     },
     {
         id: 15,
@@ -135,12 +135,12 @@ const workers = [
         city: "Peshawar",
         rating: 4.5,
         experience: "Commercial & Residential",
-        img: "https://randomuser.me/api/portraits/men/91.jpg"
+        img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSBf-KYHS7ezvi3G5xxV_hIgsovQaMpRseVA&s"
     }
 ];
 
 function TopRatedWorkers() {
-    const { input} = useContext(SearchContext);
+    const { input, showBtn, scrollToTop} = useContext(SearchContext);
     const [filter, setFilter] = useState("");
     useEffect(() => {
         if (input) {
@@ -201,6 +201,14 @@ function TopRatedWorkers() {
                     })}
                 </div>
             </div>
+             {showBtn && (
+                <button
+                    onClick={scrollToTop}
+                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
+                >
+                    Back to Top
+                </button>
+            )}
         </>
     );
 }

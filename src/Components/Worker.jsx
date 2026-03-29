@@ -311,9 +311,11 @@ function Worker() {
                 ))}
               </ul>
             </div>
-            <Link className="text-[12px] p-2 bg-blue-600 text-white rounded hover:bg-blue-700">
-              Hire and View
-            </Link>
+            <div className="mt-10">
+              <Link className=" py-2 px-10 bg-blue-600 text-white rounded hover:bg-blue-700 ">
+                Hire
+              </Link>
+            </div>
           </div>
         </div>
       </section>

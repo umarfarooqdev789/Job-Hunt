@@ -3,7 +3,8 @@ import { Link } from "react-router-dom";
 import { SearchContext } from "../SearchContext";
 
 function SavedJobs() {
-  const { saved, toggleSave } = useContext(SearchContext);
+  const { saved, toggleSave,showBtn, scrollToTop } = useContext(SearchContext);
+
   if (saved.length === 0) {
     return (
       <section className="bg-gray-50">
@@ -63,6 +64,14 @@ function SavedJobs() {
           </div>
         ))}
       </div>
+       {showBtn && (
+                <button
+                    onClick={scrollToTop}
+                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
+                >
+                    Back to Top
+                </button>
+            )}
     </section>
   );
 }

@@ -5,11 +5,13 @@ import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import FeaturedJobs from "./FeaturedJobs";
+
 function Hero() {
-    const { input, setInput } = useContext(SearchContext);
+    const { input, setInput, showBtn, scrollToTop } = useContext(SearchContext);
     const handleChange = (e) => {
         setInput(e.target.value)
     }
+
     return (
         <>
             <div className="w-full bg-gray-50 py-10">
@@ -37,7 +39,15 @@ function Hero() {
             </div>
             <Popular />
             <TopWorkers />
-            <FeaturedJobs/>
+            <FeaturedJobs />
+            {showBtn && (
+                <button
+                    onClick={scrollToTop}
+                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
+                >
+                    Back to Top
+                </button>
+            )}
         </>
     );
 };

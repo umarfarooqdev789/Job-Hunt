@@ -12,6 +12,7 @@ function Footer() {
                     <Link to="/jobs">Jobs</Link>
                     <Link to="/about">About</Link>
                     <Link to="/contact">Contact</Link>
+                    <Link to="/Login">Login/Register</Link>
                 </div>
                 <p>© 2026 Job-Hunt. All rights reserved.</p>
 
