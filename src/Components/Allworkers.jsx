@@ -261,26 +261,26 @@ function Allworkers() {
             return (
               <div
                 key={worker.id}
-                className="px-3 py-5 rounded-xl shadow-md bg-white overflow-hidden w-54"
+                className="px-5 py-6 rounded-xl shadow-md bg-white overflow-hidden w-72 flex flex-col gap-3"
               >
-                <div>
+                <div className="flex flex-col gap-1">
                   <h2 className="font-bold text-lg">{worker.title}</h2>
                   <p className="text-gray-500 text-sm">{worker.company}</p>
                   <p className="text-gray-400 text-sm">📍 {worker.location}</p>
-                  <p className="text-blue-600 font-semibold mt-2">{worker.salary}</p>
+                  <p className="text-blue-600 font-semibold mt-1">{worker.salary}</p>
                 </div>
-                <div className="flex px-2 justify-around py-5 gap-2">
+                <div className="flex items-center justify-between gap-3 mt-2">
                   <button
                     onClick={() => {
-                      console.log(worker)
-                      toggleSave(worker)
+                      console.log(worker);
+                      toggleSave(worker);
                     }}
                     className="text-2xl cursor-pointer"
                   >
                     {isSaved ? "♥" : "♡"}
                   </button>
-                  <div className="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">
-                    <Link to={`/jobdetail/${worker.id}`} className="block text-center">
+                  <div className=" bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                    <Link to={`/jobdetail/${worker.id}`} className="block text-center text-sm">
                       Apply Now
                     </Link>
                   </div>

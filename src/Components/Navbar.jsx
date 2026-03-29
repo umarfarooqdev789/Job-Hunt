@@ -20,7 +20,7 @@ function Navbar() {
             <NavLink to="/saved">Saved Jobs</NavLink>
           </li>
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink to="/login">Login/Register</NavLink>
           </li>
         </ul>
         <div className='text-2xl sm:hidden transition delay-150 duration-300 ease-in-out'>
@@ -54,7 +54,7 @@ function Navbar() {
 
             <li className="block px-3 py-2 bg-white rounded-md shadow-md cursor-pointer">
               <NavLink to="/login" className="block w-full h-full">
-                Login
+                Login/Register
               </NavLink>
             </li>
           </ul>

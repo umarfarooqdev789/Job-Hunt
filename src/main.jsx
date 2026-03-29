@@ -9,6 +9,7 @@ import Worker from "./Components/Worker"
 import Login from "./Components/Login"
 import AboutUs from "./Components/About"
 import Contact from "./Components/Contact"
+import TopRatedWorkers from "./Components/TopRatedWorkers"
 import {RouterProvider , createBrowserRouter} from "react-router-dom"
 import { SearchProvider } from "./SearchContext";
 import JobDetails from './Components/JobDetails'
@@ -20,6 +21,7 @@ import JobDetails from './Components/JobDetails'
       {path:"saved",element:<SavedJobs/>},
       {path:"card/:id",element:<Worker/>},
       {path:"jobdetail/:id",element:<JobDetails/>},
+      {path:"topratedworkers",element:<TopRatedWorkers/>},
       {path:"Login",element:<Login/>},
       {path:"about",element:<AboutUs/>},
       {path:"contact",element:<Contact/>},
