@@ -57,7 +57,7 @@ function SavedJobs() {
                 ♥
               </button>
 
-              <Link  to={`/card/${worker.id}`} className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <Link  to={`/jobdetail/${worker.id}`} className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
                 View & Apply →
               </Link>
             </div>

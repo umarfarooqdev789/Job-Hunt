@@ -216,7 +216,7 @@ import { useMemo, useState, useEffect, useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import { Link } from "react-router-dom"
 function Allworkers() {
-  const { input, saved, toggleSave, showBtn, scrollToTop  } = useContext(SearchContext);
+  const { input, saved, toggleSave, showBtn, scrollToTop } = useContext(SearchContext);
   const [filter, setFilter] = useState("");
   useEffect(() => {
     if (input) {
@@ -290,14 +290,14 @@ function Allworkers() {
           })}
         </div>
       </div>
-       {showBtn && (
-                <button
-                    onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
-                >
-                    Back to Top
-                </button>
-            )}
+      {showBtn && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
+        >
+          Back to Top
+        </button>
+      )}
     </>
   );
 }

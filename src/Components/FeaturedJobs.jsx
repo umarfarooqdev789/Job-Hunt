@@ -86,26 +86,44 @@ const jobs = [
     }
 ];
 import { Link } from "react-router-dom"
+import { useContext } from "react";
+import { SearchContext } from "../SearchContext";
 function FeaturedJobs() {
+    const { saved, toggleSave } = useContext(SearchContext);
     return (
         <div>
             <div className="bg-gray-50 py-10">
                 <h1 className="font-bold text-3xl text-center mb-8">Featured Jobs</h1>
                 <div className="flex gap-6 justify-center flex-wrap px-6">
-                    {jobs.map((job) => (
-                        <div key={job.id} className="bg-white rounded-xl shadow-md p-6 w-72">
-                            <h2 className="font-bold text-lg">{job.title}</h2>
-                            <p className="text-gray-500 text-sm">{job.company}</p>
-                            <p className="text-gray-400 text-sm">📍 {job.location}</p>
-                            <p className="text-blue-600 font-semibold mt-2">{job.salary}</p>
-                            <Link
-                                to={`/jobdetail/${job.id}`}
-                                className="mt-4 block text-center w-full bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700"
+                    {jobs.map((worker) => {
+                        const isSaved = saved.some((item) => item.id === worker.id); // ✅ Now valid
+                        return (
+                            <div
+                                key={worker.id}
+                                className="px-5 py-6 rounded-xl shadow-md bg-white overflow-hidden w-72 flex flex-col gap-3"
                             >
-                                Apply Now
-                            </Link>
-                        </div>
-                    ))}
+                                <div className="flex flex-col gap-1">
+                                    <h2 className="font-bold text-lg">{worker.title}</h2>
+                                    <p className="text-gray-500 text-sm">{worker.company}</p>
+                                    <p className="text-gray-400 text-sm">📍 {worker.location}</p>
+                                    <p className="text-blue-600 font-semibold mt-1">{worker.salary}</p>
+                                </div>
+                                <div className="flex items-center justify-between gap-3 mt-2">
+                                    <button
+                                        onClick={() => toggleSave(worker)}
+                                        className="text-2xl cursor-pointer"
+                                    >
+                                        {isSaved ? "♥" : "♡"}
+                                    </button>
+                                    <div className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                        <Link to={`/jobdetail/${worker.id}`} className="block text-center text-sm">
+                                            Apply Now
+                                        </Link>
+                                    </div>
+                                </div>
+                            </div>
+                        );
+                    })} 
                 </div>
             </div>
         </div>
