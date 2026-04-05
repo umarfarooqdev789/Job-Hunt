@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { SearchContext } from "../SearchContext";
 
 function SavedJobs() {
-  const { saved, toggleSave,showBtn, scrollToTop } = useContext(SearchContext);
+  const { saved, toggleSave, showBtn, scrollToTop } = useContext(SearchContext);
 
   if (saved.length === 0) {
     return (
@@ -32,46 +32,50 @@ function SavedJobs() {
       <div className="flex gap-8 justify-center flex-wrap p-5">
         {saved.map((worker) => (
           <div
-            className="relative min-h-64 rounded-xl shadow-md bg-white overflow-hidden w-54"
+            className="px-5 py-6 rounded-xl shadow-md bg-white overflow-hidden w-72 flex flex-col gap-3"
             key={worker.id}
           >
-            <img
-              src={worker.img}
-              alt={worker.name}
-              className="rounded w-full h-40 object-cover"
-            />
+            <div className="flex justify-center">
+              <div
+                className="w-12 h-12 rounded-full flex items-center justify-center text-white font-bold text-lg"
+                style={{ backgroundColor: worker.color }}
+              >
+                {worker.logo}
+              </div>
 
-            <ul className="py-3.5 px-5 space-y-1.5">
-              <li className="font-bold">{worker.name}</li>
-              <li className="font-medium text-[14px]">{worker.skill}</li>
-              <li className="text-gray-500 font-light">{worker.city}</li>
-              <li>⭐{worker.rating}</li>
-              <li className="text-gray-600 text-[12px]">{worker.experience}</li>
-            </ul>
+            </div>
+            <div className="flex flex-col gap-1">
+              <h2 className="font-bold text-lg">{worker.title}</h2>
+              <p className="text-gray-500 text-sm">{worker.company}</p>
+              <p className="text-gray-400 text-sm">📍 {worker.location}</p>
+              <p className="text-blue-600 font-semibold mt-1">{worker.salary}</p>
+            </div>
 
-            <div className="flex px-2 justify-around py-5">
+            <div className="flex items-center justify-between gap-3 mt-2">
               <button
                 onClick={() => toggleSave(worker)}
                 className="text-2xl cursor-pointer"
               >
                 ♥
               </button>
-
-              <Link  to={`/jobdetail/${worker.id}`} className="text-[12px] px-1.5 py-1 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <Link
+                to={`/jobdetail/${worker.id}`}
+                className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+              >
                 View & Apply →
               </Link>
             </div>
           </div>
         ))}
       </div>
-       {showBtn && (
-                <button
-                    onClick={scrollToTop}
-                    className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
-                >
-                    Back to Top
-                </button>
-            )}
+      {showBtn && (
+        <button
+          onClick={scrollToTop}
+          className="fixed bottom-8 right-8 bg-blue-600 text-white p-3 rounded-full shadow-lg hover:bg-blue-700 transition-all duration-300 z-50"
+        >
+          Back to Top
+        </button>
+      )}
     </section>
   );
 }
