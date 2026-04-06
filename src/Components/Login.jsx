@@ -82,14 +82,14 @@ function Login() {
             <div className="bg-white w-full max-w-2xl rounded-2xl p-8 shadow-md">
                 <div className="flex justify-center mb-6">
                     <button
-                        className={`px-6 py-2 rounded-l-full ${!showLogin ? "bg-blue-600 text-white font-bold" : "text-black"}`}
+                        className={`cursor-pointer px-6 py-2 rounded-l-full ${!showLogin ? "bg-blue-600 text-white font-bold" : "text-black"}`}
                         onClick={() => setShowLogin(false)}
                     >
                         Sign Up
                     </button>
 
                     <button
-                        className={`px-6 py-2 rounded-r-full ${showLogin ? "bg-blue-600 text-white font-bold" : "text-black"}`}
+                        className={`cursor-pointer px-6 py-2 rounded-r-full ${showLogin ? "bg-blue-600 text-white font-bold" : "text-black"}`}
                         onClick={() => setShowLogin(true)}
                     >
                         Login
@@ -98,15 +98,15 @@ function Login() {
 
                 {!showLogin && (
                     <>
-                        <div className="flex gap-3 mb-4 flex-col sm:flex-row">
+                        <div className="flex gap-3 mb-4 flex-col sm:flex-row items-center">
                             <button
                                 onClick={googleLogin}
-                                className="w-1/2 bg-blue-500 text-white py-2 rounded-full text-sm font-medium"
+                                className="w-full cursor-pointer sm:w-1/2 bg-blue-500 text-white py-2 rounded-full text-sm font-medium"
                             >
                                 Sign in with Google
                             </button>
 
-                            <button onClick={facebookLogin} className="w-1/2 bg-blue-200 text-black py-2 rounded-full text-sm font-medium">
+                            <button onClick={facebookLogin} className="w-full cursor-pointer sm:w-1/2 bg-blue-200 text-black py-2 rounded-full text-sm font-medium">
                                 Sign in with Facebook
                             </button>
                         </div>
@@ -149,20 +149,22 @@ function Login() {
                                 placeholder="Password"
                                 className="w-full p-2 bg-gray-100 rounded"
                                 value={password}
+                                autoComplete="true"
                                 onChange={(e) => { setMsg(""); setPassword(e.target.value); }}
                             />
 
                             <div className="flex items-center gap-2">
                                 <input
                                     type="checkbox"
+                                    className="cursor-pointer"
                                     id="checkpoint"
                                     checked={check}
                                     onChange={() => { setMsg(""); setCheck(!check); }}
                                 />
-                                <label htmlFor="checkpoint">I agree to terms & conditions</label>
+                                <label htmlFor="checkpoint" className="cursor-pointer">I agree to terms & conditions</label>
                             </div>
 
-                            <button className="w-full bg-blue-600 text-white py-2 rounded-lg text-lg font-semibold">
+                            <button className="cursor-pointer w-full bg-blue-600 text-white py-2 rounded-lg text-lg font-semibold">
                                 Sign Up
                             </button>
                         </form>
@@ -171,21 +173,18 @@ function Login() {
                 {showLogin && (
                     <form onSubmit={handleLogin} className="space-y-3">
                         <h1 className="text-2xl font-bold text-center">Log In</h1>
-                        <button
-                            onClick={facebookLogin}
-                            type="button"
-                            className="w-full bg-blue-800 text-white py-2 rounded-full mb-3 hover:bg-blue-700 cursor-pointer"
-                        >
-                            Continue with Facebook
-                        </button>
-                        <button
-                            onClick={googleLogin}
-                            type="button"
-                            className="w-full bg-blue-600 text-white py-2 rounded-full mb-3 hover:bg-blue-500 cursor-pointer"
-                        >
-                            Continue with Google
-                        </button>
+                        <div className="flex gap-3 mb-4 flex-col sm:flex-row items-center">
+                            <button
+                                onClick={googleLogin}
+                                className="w-full cursor-pointer sm:w-1/2 bg-blue-500 text-white py-2 rounded-full text-sm font-medium"
+                            >
+                                Sign in with Google
+                            </button>
 
+                            <button onClick={facebookLogin} className="w-full cursor-pointer sm:w-1/2 bg-blue-200 text-black py-2 rounded-full text-sm font-medium">
+                                Sign in with Facebook
+                            </button>
+                        </div>
                         {msg2 && (
                             <p className={`text-center p-2 rounded text-sm ${msg2.includes("success") ? "bg-green-200 text-green-800" : "bg-red-200 text-red-800"}`}>
                                 {msg2}
@@ -208,7 +207,7 @@ function Login() {
                             onChange={(e) => { setMsg2(""); setLoginPassword(e.target.value); }}
                         />
 
-                        <button className="w-full bg-blue-500 text-white py-2 rounded-lg text-lg font-semibold">
+                        <button className="cursor-pointer w-full bg-blue-500 text-white py-2 rounded-lg text-lg font-semibold">
                             Login
                         </button>
                     </form>

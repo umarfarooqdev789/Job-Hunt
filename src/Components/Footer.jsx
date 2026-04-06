@@ -7,7 +7,7 @@ function Footer() {
                 <div>
                     <img src={logo} alt="" className='w-28' />
                 </div>
-                <div className='flex gap-13 text-gray-300 p-4'>
+                <div className='flex gap-x-13 text-gray-300 p-4 flex-wrap items-center justify-center'>
                     <Link to="">Home</Link>
                     <Link to="/jobs">Jobs</Link>
                     <Link to="/about">About</Link>
