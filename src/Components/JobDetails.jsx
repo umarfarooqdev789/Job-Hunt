@@ -272,7 +272,7 @@ function JobDetails() {
                         </div>
                     </div>
                     <div className="mb-10 w-35 mx-10 px-5  mt-3 bg-blue-600 hover:bg-blue-700  text-white font-bold text-sm py-2.5 rounded-xl transition-all duration-150">
-                        <Link >
+                        <Link to={`/applyform/${job.id}`}>
                             Apply Now →
                         </Link>
                     </div >

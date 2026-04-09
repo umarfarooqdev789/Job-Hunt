@@ -50,14 +50,17 @@ import { Link } from "react-router-dom"
 function TopWorkers() {
     return (
         <div className="bg-gray-50 pt-15 pb-2.5">
-            <div className="flex justify-between px-20">
-                <h1 className="font-bold text-3xl">Top Rated Workers</h1>
-                <Link
-                to="/topratedworkers"
-                    className="border-blue-600 border rounded-[22px] px-4 py-1.5 text-[12px] transition-all duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
-                >
-                    See all Workers
-                </Link>
+            <div className="flex justify-between px-10 sm:px-20 items-center">
+                <h1 className="font-bold  text-[15px] sm:text-3xl">Top Rated Workers</h1>
+                <div>
+
+                    <Link
+                        to="/topratedworkers"
+                        className="border-blue-600 border rounded-[22px] px-4 py-1.5 text-[12px] transition-all duration-300 ease-in-out hover:bg-blue-600 hover:text-white"
+                    >
+                        See all Workers
+                    </Link>
+                </div>
             </div>
             <div className="flex gap-8 justify-center mt-10 flex-wrap p-5">
                 {workers.map((worker) => {
