@@ -4,6 +4,7 @@ import { Link } from "react-router-dom"
 const workers = [
     {
         id: 1,
+        email: "ahmadali@gmail.com",
         name: "Ahmad Ali",
         skill: "Electrician",
         city: "Lahore",
@@ -13,6 +14,7 @@ const workers = [
     },
     {
         id: 2,
+        email: "sarakhan@gmail.com",
         name: "Sara Khan",
         skill: "Graphic Designer",
         city: "Karachi",
@@ -22,6 +24,7 @@ const workers = [
     },
     {
         id: 3,
+        email: "usmantariq@gmail.com",
         name: "Usman Tariq",
         skill: "Plumber",
         city: "Islamabad",
@@ -31,6 +34,7 @@ const workers = [
     },
     {
         id: 4,
+        email: "iqrajaved@gmail.com",
         name: "Iqra Javed",
         skill: "Digital Marketer",
         city: "Multan",
@@ -40,6 +44,7 @@ const workers = [
     },
     {
         id: 5,
+        email: "aliraza@gmail.com",
         name: "Ali Raza",
         skill: "Carpenter",
         city: "Faisalabad",
@@ -49,6 +54,7 @@ const workers = [
     },
     {
         id: 6,
+        email: "fatimanoor@gmail.com",
         name: "Fatima Noor",
         skill: "Web Developer",
         city: "Lahore",
@@ -58,6 +64,7 @@ const workers = [
     },
     {
         id: 7,
+        email: "bilalsheikh@gmail.com",
         name: "Bilal Sheikh",
         skill: "Painter",
         city: "Rawalpindi",
@@ -67,6 +74,7 @@ const workers = [
     },
     {
         id: 8,
+        email: "zainabmalik@gmail.com",
         name: "Zainab Malik",
         skill: "Content Writer",
         city: "Karachi",
@@ -76,6 +84,7 @@ const workers = [
     },
     {
         id: 9,
+        email: "hassanmehmood@gmail.com",
         name: "Hassan Mehmood",
         skill: "AC Technician",
         city: "Lahore",
@@ -85,6 +94,7 @@ const workers = [
     },
     {
         id: 10,
+        email: "ayeshasiddiqui@gmail.com",
         name: "Ayesha Siddiqui",
         skill: "Fashion Designer",
         city: "Karachi",
@@ -94,6 +104,7 @@ const workers = [
     },
     {
         id: 11,
+        email: "kamranbutt@gmail.com",
         name: "Kamran Butt",
         skill: "Welder",
         city: "Sialkot",
@@ -103,6 +114,7 @@ const workers = [
     },
     {
         id: 12,
+        email: "sanaiftikhar@gmail.com",
         name: "Sana Iftikhar",
         skill: "Tutor",
         city: "Islamabad",
@@ -112,6 +124,7 @@ const workers = [
     },
     {
         id: 13,
+        email: "junaidaslam@gmail.com",
         name: "Junaid Aslam",
         skill: "Mechanic",
         city: "Gujranwala",
@@ -121,6 +134,7 @@ const workers = [
     },
     {
         id: 14,
+        email: "nadiahussain@gmail.com",
         name: "Nadia Hussain",
         skill: "Cook / Chef",
         city: "Lahore",
@@ -130,6 +144,7 @@ const workers = [
     },
     {
         id: 15,
+        email: "shahzadrana@gmail.com",
         name: "Shahzad Rana",
         skill: "Security Guard",
         city: "Peshawar",

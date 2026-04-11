@@ -6,6 +6,7 @@ const workers = [
   {
     id: 1,
     name: "Ahmad Ali",
+    email: "ahmadali@gmail.com",
     skill: "Electrician",
     city: "Lahore",
     rating: 4.9,
@@ -24,6 +25,7 @@ const workers = [
   {
     id: 2,
     name: "Sara Khan",
+    email: "sarakhan@gmail.com",
     skill: "Graphic Designer",
     city: "Karachi",
     rating: 4.8,
@@ -42,6 +44,7 @@ const workers = [
   {
     id: 3,
     name: "Usman Tariq",
+    email: "usmantariq@gmail.com",
     skill: "Plumber",
     city: "Islamabad",
     rating: 4.7,
@@ -60,6 +63,7 @@ const workers = [
   {
     id: 4,
     name: "Iqra Javed",
+    email: "iqrajaved@gmail.com",
     skill: "Digital Marketer",
     city: "Multan",
     rating: 4.8,
@@ -78,6 +82,7 @@ const workers = [
   {
     id: 5,
     name: "Ali Raza",
+    email: "aliraza@gmail.com",
     skill: "Carpenter",
     city: "Faisalabad",
     rating: 4.6,
@@ -96,6 +101,7 @@ const workers = [
   {
     id: 6,
     name: "Fatima Noor",
+    email: "fatimanoor@gmail.com",
     skill: "Web Developer",
     city: "Lahore",
     rating: 4.9,
@@ -114,6 +120,7 @@ const workers = [
   {
     id: 7,
     name: "Bilal Sheikh",
+    email: "bilalsheikh@gmail.com",
     skill: "Painter",
     city: "Rawalpindi",
     rating: 4.5,
@@ -132,6 +139,7 @@ const workers = [
   {
     id: 8,
     name: "Zainab Malik",
+    email: "zainabmalik@gmail.com",
     skill: "Content Writer",
     city: "Karachi",
     rating: 4.7,
@@ -150,6 +158,7 @@ const workers = [
   {
     id: 9,
     name: "Hassan Mehmood",
+    email: "hassanmehmood@gmail.com",
     skill: "AC Technician",
     city: "Lahore",
     rating: 4.8,
@@ -168,6 +177,7 @@ const workers = [
   {
     id: 10,
     name: "Ayesha Siddiqui",
+    email: "ayeshasiddiqui@gmail.com",
     skill: "Fashion Designer",
     city: "Karachi",
     rating: 4.9,
@@ -186,6 +196,7 @@ const workers = [
   {
     id: 11,
     name: "Kamran Butt",
+    email: "kamranbutt@gmail.com",
     skill: "Welder",
     city: "Sialkot",
     rating: 4.6,
@@ -204,6 +215,7 @@ const workers = [
   {
     id: 12,
     name: "Sana Iftikhar",
+    email: "sanaiftikhar@gmail.com",
     skill: "Tutor",
     city: "Islamabad",
     rating: 4.9,
@@ -222,6 +234,7 @@ const workers = [
   {
     id: 13,
     name: "Junaid Aslam",
+    email: "junaidaslam@gmail.com",
     skill: "Mechanic",
     city: "Gujranwala",
     rating: 4.7,
@@ -240,6 +253,7 @@ const workers = [
   {
     id: 14,
     name: "Nadia Hussain",
+    email: "nadiahussain@gmail.com",
     skill: "Cook / Chef",
     city: "Lahore",
     rating: 4.8,
@@ -258,6 +272,7 @@ const workers = [
   {
     id: 15,
     name: "Shahzad Rana",
+    email: "shahzadrana@gmail.com",
     skill: "Security Guard",
     city: "Peshawar",
     rating: 4.5,
@@ -312,7 +327,8 @@ function Worker() {
               </ul>
             </div>
             <div className="mt-10">
-              <Link className=" py-2 px-10 bg-blue-600 text-white rounded hover:bg-blue-700 ">
+              <Link to={`/hireform/${job.id}`} state={{ email: job.email, name: job.name, skill: job.skill }}
+                className="py-2 px-10 bg-blue-600 text-white rounded hover:bg-blue-700">
                 Hire
               </Link>
             </div>

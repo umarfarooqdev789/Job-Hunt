@@ -4,6 +4,7 @@ const jobs = [
         id: 1,
         title: "Frontend Developer",
         company: "TechCorp",
+        email: "techcorp@gmail.com",
         location: "Lahore, Pakistan",
         type: "Full-time",
         salary: "Rs 80,000 – Rs 120,000",
@@ -25,6 +26,7 @@ const jobs = [
         id: 2,
         title: "Graphic Designer",
         company: "CreativeHub",
+        email: "creativehub@gmail.com",
         location: "Karachi, Pakistan",
         type: "Part-time",
         salary: "Rs 50,000 – Rs 80,000",
@@ -46,6 +48,7 @@ const jobs = [
         id: 3,
         title: "Digital Marketer",
         company: "GrowthX",
+        email: "growthx@gmail.com",
         location: "Islamabad, Pakistan",
         type: "Full-time",
         salary: "Rs 70,000 – Rs 100,000",
@@ -67,6 +70,7 @@ const jobs = [
         id: 4,
         title: "Backend Developer",
         company: "CodeNest",
+        email: "codenest@gmail.com",
         location: "Lahore, Pakistan",
         type: "Full-time",
         salary: "Rs 100,000 – Rs 150,000",
@@ -88,6 +92,7 @@ const jobs = [
         id: 5,
         title: "UI/UX Designer",
         company: "PixelCraft",
+        email: "pixelcraft@gmail.com",
         location: "Karachi, Pakistan",
         type: "Remote",
         salary: "Rs 60,000 – Rs 90,000",
@@ -109,6 +114,7 @@ const jobs = [
         id: 6,
         title: "React Native Developer",
         company: "AppForge",
+        email: "appforge@gmail.com",
         location: "Faisalabad, Pakistan",
         type: "Full-time",
         salary: "Rs 90,000 – Rs 130,000",
@@ -130,6 +136,7 @@ const jobs = [
         id: 7,
         title: "Data Analyst",
         company: "InsightIQ",
+        email: "insightiq@gmail.com",
         location: "Islamabad, Pakistan",
         type: "Full-time",
         salary: "Rs 85,000 – Rs 120,000",
@@ -151,6 +158,7 @@ const jobs = [
         id: 8,
         title: "Content Writer",
         company: "WordFlow",
+        email: "wordflow@gmail.com",
         location: "Remote",
         type: "Part-time",
         salary: "Rs 40,000 – Rs 60,000",
@@ -172,6 +180,7 @@ const jobs = [
         id: 9,
         title: "DevOps Engineer",
         company: "CloudBase",
+        email: "cloudbase@gmail.com",
         location: "Lahore, Pakistan",
         type: "Full-time",
         salary: "Rs 150,000 – Rs 200,000",
@@ -193,6 +202,7 @@ const jobs = [
         id: 10,
         title: "WordPress Developer",
         company: "WebMakers",
+        email: "webmakers@gmail.com",
         location: "Multan, Pakistan",
         type: "Freelance",
         salary: "Rs 50,000 – Rs 80,000",
@@ -272,7 +282,7 @@ function JobDetails() {
                         </div>
                     </div>
                     <div className="mb-10 w-35 mx-10 px-5  mt-3 bg-blue-600 hover:bg-blue-700  text-white font-bold text-sm py-2.5 rounded-xl transition-all duration-150">
-                        <Link to={`/applyform/${job.id}`}>
+                        <Link to={`/applyform/${job.id}`} state={{ email: job.email, title: job.title }}>
                             Apply Now →
                         </Link>
                     </div >

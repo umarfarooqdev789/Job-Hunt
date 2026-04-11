@@ -14,6 +14,7 @@ import {RouterProvider , createBrowserRouter} from "react-router-dom"
 import { SearchProvider } from "./SearchContext";
 import JobDetails from './Components/JobDetails'
 import ApplyForm from './Components/ApplyForm'
+import HireForm from './Components/HireForm'
  const router =createBrowserRouter([
   {path:"/",element:<Layout/>,
     children:[
@@ -27,6 +28,7 @@ import ApplyForm from './Components/ApplyForm'
       {path:"about",element:<AboutUs/>},
       {path:"contact",element:<Contact/>},
       {path:"applyform/:id",element:<ApplyForm/>},
+      {path:"/hireform/:id",element:<HireForm/>},
     ]
   }
  ])
