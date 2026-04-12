@@ -224,34 +224,42 @@ const jobs = [
 import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
+
 function FeaturedJobs() {
     const { saved, toggleSave } = useContext(SearchContext);
     return (
         <div>
-            <div className="bg-gray-50 py-10">
-                <h1 className="font-bold text-3xl text-center mb-8">Featured Jobs</h1>
+            <div className="bg-gray-50 py-6">
+               <h1 className="font-extrabold text-3xl text-center mb-8">Featured Jobs</h1>
                 <div className="flex gap-6 justify-center flex-wrap px-6">
                     {jobs.map((worker) => {
-                        const isSaved = saved.some((item) => item.id === worker.id); // ✅ Now valid
+                        const isSaved = saved.some((item) => item.id === worker.id);
                         return (
                             <div
                                 key={worker.id}
-                                className="px-5 py-6 rounded-xl shadow-md bg-white overflow-hidden w-72 flex flex-col gap-3"
+                                className="px-5 py-6 rounded-xl shadow-md bg-white overflow-hidden w-72 flex flex-col gap-3 min-h-55 justify-between"
                             >
                                 <div className="flex flex-col gap-1">
-                                    <h2 className="font-bold text-lg">{worker.title}</h2>
-                                    <p className="text-gray-500 text-sm">{worker.company}</p>
-                                    <p className="text-gray-400 text-sm">📍 {worker.location}</p>
-                                    <p className="text-blue-600 font-semibold mt-1">{worker.salary}</p>
+                                    {/* Logo placeholder */}
+                                    <div
+                                        className="w-10 h-10 rounded-lg flex items-center justify-center text-white text-sm font-bold mb-1"
+                                        style={{ backgroundColor: worker.color }}
+                                    >
+                                        {worker.logo}
+                                    </div>
+                                    <h2 className="font-extrabold text-lg line-clamp-1">{worker.title}</h2>
+                                    <p className="text-gray-500 text-sm line-clamp-1">{worker.company}</p>
+                                    <p className="text-gray-400 text-sm line-clamp-1">📍 {worker.location}</p>
+                                    <p className="text-blue-600 font-semibold mt-1 line-clamp-1">{worker.salary}</p>
                                 </div>
                                 <div className="flex items-center justify-between gap-3 mt-2">
                                     <button
                                         onClick={() => toggleSave(worker)}
-                                        className="text-2xl cursor-pointer"
+                                        className="text-2xl cursor-pointer transition-all duration-300 hover:scale-110"
                                     >
                                         {isSaved ? "♥" : "♡"}
                                     </button>
-                                    <div className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">
+                                    <div className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-all duration-300">
                                         <Link to={`/jobdetail/${worker.id}`} className="block text-center text-sm">
                                             Apply Now
                                         </Link>
@@ -259,7 +267,7 @@ function FeaturedJobs() {
                                 </div>
                             </div>
                         );
-                    })} 
+                    })}
                 </div>
             </div>
         </div>

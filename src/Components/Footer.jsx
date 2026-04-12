@@ -2,7 +2,7 @@ import logo from '../assets/logo.png'
 import { Link } from 'react-router-dom'
 function Footer() {
     return (
-        <div className=" bg-gray-50 ">
+        <div>
             <div className='flex justify-center items-center flex-col bg-blue-600 py-8 px-4 gap-4'>
                 <div>
                     <img src={logo} alt="" className='w-28' />

@@ -303,9 +303,9 @@ function Worker() {
               <img src={job.img} alt={job.name} className="rounded w-60 h-40 object-cover" />
             </div>
             <div className="px-3">
-              <h1 className="font-bold text-4xl pt-3">{job.name}</h1>
-              <h2 className="pt-1.5 text-gray-500">{job.skill}</h2>
-              <h3 className=" text-gray-500 ">📍{job.city}</h3>
+              <h1 className="font-extrabold text-4xl pt-3">{job.name}</h1>
+              <h2 className="pt-1.5 text-gray-400 text-sm">{job.skill}</h2>
+              <h3 className="text-gray-400 text-sm">📍{job.city}</h3>
             </div>
           </div>
           <div className="p-10">
@@ -327,8 +327,10 @@ function Worker() {
               </ul>
             </div>
             <div className="mt-10">
-              <Link to={`/hireform/${job.id}`} state={{ email: job.email, name: job.name, skill: job.skill }}
-                className="py-2 px-10 bg-blue-600 text-white rounded hover:bg-blue-700">
+              <Link
+                to={`/hireform/${job.id}`}
+                state={{ email: job.email, name: job.name, skill: job.skill }}
+                className="py-2 px-10 bg-blue-600 text-white rounded hover:bg-blue-700 transition-all duration-300">
                 Hire
               </Link>
             </div>

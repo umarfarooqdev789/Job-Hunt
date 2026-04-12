@@ -87,7 +87,7 @@ function ApplyForm() {
             )}
 
             <button type="submit" disabled={status === 'loading'}
-              className="mt-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all duration-150">
+              className="mt-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all duration-300">
               {status === 'loading' ? 'Sending...' : 'Apply Now →'}
             </button>
           </form>

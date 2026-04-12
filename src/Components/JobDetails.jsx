@@ -236,10 +236,10 @@ function JobDetails() {
                         <h1 className="text-3xl font-extrabold text-black tracking-tight mb-1">
                             {job.title}
                         </h1>
-                        <h2 className="text-blue-600 font-medium mb-5">{job.company}</h2>
+                        <h2 className="text-blue-600 font-medium mb-5 text-sm">{job.company}</h2>
 
                         <ul className="flex flex-wrap gap-2">
-                            <li className="bg-gray-50 border border-gray-200 text-gray-700 text-sm px-3 py-1.5 rounded-lg">
+                            <li className="bg-gray-50 border border-gray-200 text-gray-400 text-sm px-3 py-1.5 rounded-lg">
                                 📍 {job.location}
                             </li>
                             {job.featured && (
@@ -281,11 +281,11 @@ function JobDetails() {
                             </ul>
                         </div>
                     </div>
-                    <div className="mb-10 w-35 mx-10 px-5  mt-3 bg-blue-600 hover:bg-blue-700  text-white font-bold text-sm py-2.5 rounded-xl transition-all duration-150">
+                    <div className="mb-10 w-35 mx-10 px-5 mt-3 bg-blue-600 hover:bg-blue-700 text-white font-bold text-sm py-2.5 rounded-xl transition-all duration-300">
                         <Link to={`/applyform/${job.id}`} state={{ email: job.email, title: job.title }}>
                             Apply Now →
                         </Link>
-                    </div >
+                    </div>
 
                 </div>
             </section>

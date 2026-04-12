@@ -15,9 +15,9 @@ function HireForm() {
         const form = e.target;
 
         const templateParams = {
-            to_email: workerEmail,        
-            worker_name: workerName,    
-            worker_skill: workerSkill,  
+            to_email: workerEmail,
+            worker_name: workerName,
+            worker_skill: workerSkill,
             from_name: form.from_name.value,
             from_email: form.from_email.value,
             phone: form.phone.value,
@@ -85,7 +85,7 @@ function HireForm() {
                         )}
 
                         <button type="submit" disabled={status === 'loading'}
-                            className="mt-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all duration-150">
+                            className="mt-2 bg-blue-600 hover:bg-blue-700 disabled:opacity-50 text-white font-bold py-3 rounded-xl transition-all duration-300">
                             {status === 'loading' ? 'Sending...' : 'Send Hire Request →'}
                         </button>
                     </form>

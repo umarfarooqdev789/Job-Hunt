@@ -5,7 +5,7 @@ import { onAuthStateChanged, signOut } from 'firebase/auth';
 
 function Navbar() {
   const [open, setOpen] = useState(false);
-  const [user, setUser] = useState(null);   
+  const [user, setUser] = useState(null);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -21,14 +21,24 @@ function Navbar() {
     });
   };
 
+  const navLinkClass = ({ isActive }) =>
+    isActive ? "font-bold text-white border-b-2 border-white pb-0.5" : "font-normal";
+
+
+  const mobileNavLinkClass = ({ isActive }) =>
+    isActive ? "block w-full h-full font-bold text-blue-600" : "block w-full h-full";
+
   return (
     <>
       <nav className="bg-blue-400 text-white px-10 py-3 flex justify-between items-center sticky top-0 z-20">
-        <div className="text-2xl font-bold">Job-Hunt</div>
+        <NavLink to="/" className="text-2xl font-bold text-white">
+          Job-Hunt
+        </NavLink>
+
         <ul className="flex gap-6 max-sm:hidden font-normal text-[16px] items-center">
-          <li><NavLink to="/">Home</NavLink></li>
-          <li><NavLink to="/jobs">Jobs</NavLink></li>
-          <li><NavLink to="/saved">Saved Jobs</NavLink></li>
+          <li><NavLink to="/" className={navLinkClass}>Home</NavLink></li>
+          <li><NavLink to="/jobs" className={navLinkClass}>Jobs</NavLink></li>
+          <li><NavLink to="/saved" className={navLinkClass}>Saved Jobs</NavLink></li>
 
           {user ? (
             <>
@@ -38,14 +48,14 @@ function Navbar() {
               <li>
                 <button
                   onClick={handleLogout}
-                  className="bg-white text-blue-600 px-4 py-1 rounded-full font-semibold cursor-pointer"
+                  className="bg-white text-blue-600 px-4 py-1 rounded-full font-semibold cursor-pointer transition-all duration-300 hover:bg-blue-50"
                 >
                   Logout
                 </button>
               </li>
             </>
           ) : (
-            <li><NavLink to="/login">Login/Register</NavLink></li>
+            <li><NavLink to="/login" className={navLinkClass}>Login/Register</NavLink></li>
           )}
         </ul>
 
@@ -54,18 +64,19 @@ function Navbar() {
             <i className="fa-solid fa-bars"></i>
           </button>
         </div>
-      </nav>  
+      </nav>
+
       {open && (
         <div className='mt-1.5 sm:hidden'>
           <ul className="flex flex-col gap-2 px-2 font-light">
             <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-              <NavLink to="/" className="block w-full h-full">Home</NavLink>
+              <NavLink to="/" className={mobileNavLinkClass}>Home</NavLink>
             </li>
             <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-              <NavLink to="/jobs" className="block w-full h-full">Jobs</NavLink>
+              <NavLink to="/jobs" className={mobileNavLinkClass}>Jobs</NavLink>
             </li>
             <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-              <NavLink to="/saved" className="block w-full h-full">Saved Jobs</NavLink>
+              <NavLink to="/saved" className={mobileNavLinkClass}>Saved Jobs</NavLink>
             </li>
             {user ? (
               <>
@@ -73,14 +84,17 @@ function Navbar() {
                   👤 {user.displayName || user.email}
                 </li>
                 <li className="block px-3 py-2 bg-white rounded-md shadow-md">
-                  <button onClick={handleLogout} className="text-red-500 font-semibold w-full text-left cursor-pointer">
+                  <button
+                    onClick={handleLogout}
+                    className="text-red-500 font-semibold w-full text-left cursor-pointer transition-all duration-300 hover:text-red-700"
+                  >
                     Logout
                   </button>
                 </li>
               </>
             ) : (
               <li className="block px-3 py-2 bg-white rounded-md shadow-md cursor-pointer">
-                <NavLink to="/login" className="block w-full h-full">Login/Register</NavLink>
+                <NavLink to="/login" className={mobileNavLinkClass}>Login/Register</NavLink>
               </li>
             )}
           </ul>
