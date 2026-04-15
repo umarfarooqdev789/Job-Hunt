@@ -67,8 +67,8 @@ function Navbar() {
       </nav>
 
       {open && (
-        <div className='mt-1.5 sm:hidden'>
-          <ul className="flex flex-col gap-2 px-2 font-light">
+  <div className='fixed top-14 left-0 w-full  bg-white z-50 sm:hidden'>
+    <ul className="flex flex-col gap-2 px-4 py-6 font-light">
             <li className="block px-3 py-2 bg-white rounded-md shadow-md">
               <NavLink to="/" className={mobileNavLinkClass}>Home</NavLink>
             </li>
