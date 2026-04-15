@@ -224,13 +224,17 @@ const jobs = [
 import { Link } from "react-router-dom"
 import { useContext } from "react";
 import { SearchContext } from "../SearchContext";
+import { auth } from '../firebase';
+import { useNavigate } from 'react-router-dom';
 
 function FeaturedJobs() {
+    const navigate = useNavigate();
+    const user = auth.currentUser;
     const { saved, toggleSave } = useContext(SearchContext);
     return (
         <div>
             <div className="bg-gray-50 py-6">
-               <h1 className="font-extrabold text-3xl text-center mb-8">Featured Jobs</h1>
+                <h1 className="font-extrabold text-3xl text-center mb-8">Featured Jobs</h1>
                 <div className="flex gap-6 justify-center flex-wrap px-6">
                     {jobs.map((worker) => {
                         const isSaved = saved.some((item) => item.id === worker.id);
@@ -254,7 +258,13 @@ function FeaturedJobs() {
                                 </div>
                                 <div className="flex items-center justify-between gap-3 mt-2">
                                     <button
-                                        onClick={() => toggleSave(worker)}
+                                        onClick={() => {
+                                            if (!user) {
+                                                navigate('/login');
+                                                return;
+                                            }
+                                            toggleSave(worker);
+                                        }}
                                         className="text-2xl cursor-pointer transition-all duration-300 hover:scale-110"
                                     >
                                         {isSaved ? "♥" : "♡"}

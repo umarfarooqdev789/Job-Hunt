@@ -5,7 +5,9 @@ function Footer() {
         <div>
             <div className='flex justify-center items-center flex-col bg-blue-600 py-8 px-4 gap-4'>
                 <div>
-                    <img src={logo} alt="" className='w-28' />
+                    <Link to="/" className="text-2xl font-bold text-white">
+                        Job-Hunt
+                    </Link>
                 </div>
                 <div className='flex gap-x-13 text-gray-300 p-4 flex-wrap items-center justify-center'>
                     <Link to="">Home</Link>

@@ -1,13 +1,23 @@
 import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import emailjs from '@emailjs/browser';
+import { useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { auth } from '../firebase';
 
 function ApplyForm() {
   const { state } = useLocation();
   const jobEmail = state?.email;
   const jobTitle = state?.title;
   const [status, setStatus] = useState('idle');
+  const navigate = useNavigate();
 
+  useEffect(() => {
+    const user = auth.currentUser;
+    if (!user) {
+      navigate('/login');
+    }
+  }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('loading');

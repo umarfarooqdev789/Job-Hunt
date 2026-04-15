@@ -220,12 +220,14 @@ const workers = [
         featured: false,
     },
 ];
+
 import { useMemo, useState, useEffect, useContext } from "react";
 import { SearchContext } from "../SearchContext";
 import { Link } from "react-router-dom"
 function Allworkers() {
   const { input, saved, toggleSave, showBtn, scrollToTop } = useContext(SearchContext);
   const [filter, setFilter] = useState("");
+  
   useEffect(() => {
     if (input) {
       setFilter(input);
@@ -237,13 +239,14 @@ function Allworkers() {
     const searchTerm = filter.toLowerCase();
 
     return workers.filter((worker) => {
-      return (
+    return (
         worker.title.toLowerCase().includes(searchTerm) ||
         worker.company.toLowerCase().includes(searchTerm) ||
         worker.location.toLowerCase().includes(searchTerm) ||
-        worker.type.toLowerCase().includes(searchTerm)
-      );
-    });
+        worker.type.toLowerCase().includes(searchTerm) ||
+        worker.tags?.some(tag => tag.toLowerCase().includes(searchTerm))
+    );
+});
   }, [filter]);
   return (
     <>
